@@ -6,10 +6,7 @@
 	"author": "Gilson Alves <gilsonalvesdesouza@hotmail.com> && Lucas Araujo <lucas1306@hotmail.com.br> && Rafael Firmino Moraes <rafaelfirmino@msn.com> ",
 	"license": "MIT",
 	"scripts": {
-		"build": "rm -rf ./dist && tsc",
-		"dev": "nodemon src/server.ts",
-		"start": "node ./dist/src/server.js",
-		"test": "set NODE_ENV=test& jest --runInBand"
+		"dev": "nodemon src/server.ts"
 	},
 	"dependencies": {
 		"bcrypt": "^5.1.0",
