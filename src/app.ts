@@ -19,7 +19,10 @@ const swaggerUiOptions = {
 	cors: true,
 	swaggerOptions: {}
 };
-
+app.use((req, res, next) => {
+	res.header('Referrer-Policy', 'no-referrer-when-downgrade'); // Configurar a política de referência desejada
+	next();
+});
 app.use(
 	'/api-docs',
 	swaggerUI.serve,
