@@ -15,7 +15,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+const swaggerUiOptions = {
+	cors: true,
+	swaggerOptions: {}
+};
+
+app.use(
+	'/api-docs',
+	swaggerUI.serve,
+	swaggerUI.setup(swaggerDocument, swaggerUiOptions)
+);
 app.get('/swagger', (_, res: Response) => {
 	return res.sendFile(process.cwd() + '/swagger.json');
 });
